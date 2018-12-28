@@ -1,0 +1,27 @@
+
+
+server.port: 8081
+
+spring:
+#  zipkin:
+#    baseUrl:  http://localhost:9411
+
+  application:
+    name: Hystrix_test_service1
+
+
+second-service:
+  ribbon:
+    listOfServers: http://localhost:8082/
+
+third-service:
+  ribbon:
+    listOfServers: http://localhost:8083/
+
+feign:
+  hystrix:
+    enabled: false
+
+json-service:
+  ribbon:
+    listOfServers: https://jsonplaceholder.typicode.com/
